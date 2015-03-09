@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["assoc",""],["typeparam",""]],"trait":[["Into",""]]});
