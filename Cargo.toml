@@ -1,0 +1,8 @@
+[package]
+
+name = "rand-sketch"
+version = "0.0.1"
+authors = ["Huon Wilson <dbau.pp@gmail.com>"]
+
+[dependencies]
+rand = "0.2"
