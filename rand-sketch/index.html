@@ -43,8 +43,82 @@
     <section id='main' class="content mod">
 <h1 class='fqn'><span class='in-band'>Crate <a class='mod' href=''>rand-sketch</a><wbr></span><span class='out-of-band'><a href='stability.html'>[stability]</a> <span id='render-detail'>
             <a id="collapse-all" href="#">[-]</a>&nbsp;<a id="expand-all" href="#">[+]</a>
-        </span><a id='src-0' href='../src/rand-sketch/rand-sketch.rs.html#1-612'>[src]</a></span></h1>
-<div class='docblock'><p><code>assoc</code> and <code>typeparam</code> are two different ways to encode constraints
+        </span><a id='src-0' href='../src/rand-sketch/lib.rs.html#1-149'>[src]</a></span></h1>
+<div class='docblock'>
+<h2 id="todo:-update-text-for-the-stream-type." class='section-header'><a
+                           href="#todo:-update-text-for-the-stream-type.">TODO: update text for the stream type.</a></h2>
+<h1 id="updated-benchmarks" class='section-header'><a
+                           href="#updated-benchmarks">Updated benchmarks</a></h1>
+<table><thead>
+<tr>
+<th>bench</th>
+<th>assoc</th>
+<th>stream</th>
+<th>typeparam</th>
+<th>original</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>gen_</code></td>
+<td>708</td>
+<td>706</td>
+<td><strong>688</strong></td>
+<td>717</td>
+</tr>
+<tr>
+<td><code>iter</code></td>
+<td><strong>262</strong></td>
+<td><strong>265</strong></td>
+<td>274</td>
+<td>322</td>
+</tr>
+<tr>
+<td><code>iter__noiterbb</code></td>
+<td><strong>258</strong></td>
+<td><strong>255</strong></td>
+<td>270</td>
+<td>263</td>
+</tr>
+<tr>
+<td><code>range_gen</code></td>
+<td>1292</td>
+<td><strong>1247</strong></td>
+<td><strong>1244</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><code>range_gen__bb</code></td>
+<td>3960</td>
+<td>3937</td>
+<td><strong>3847</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><code>range_iter</code></td>
+<td>765</td>
+<td><strong>724</strong></td>
+<td>1018</td>
+<td></td>
+</tr>
+<tr>
+<td><code>range_iter__bb</code></td>
+<td>779</td>
+<td><strong>665</strong></td>
+<td>1088</td>
+<td></td>
+</tr>
+<tr>
+<td><code>range_iter__noiterbb</code></td>
+<td><strong>384</strong></td>
+<td>394</td>
+<td>405</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<h1 id="old-text" class='section-header'><a
+                           href="#old-text">Old text</a></h1>
+<p><code>assoc</code> and <code>typeparam</code> are two different ways to encode constraints
 for <code>Random</code> (aka <code>Random</code>). <code>assoc</code> uses an associated type and
 generic conversions to provide a nice API, with computations
 &quot;front-loaded&quot;/cached if possible (particularly for
@@ -52,8 +126,8 @@ generic conversions to provide a nice API, with computations
 doesn&#39;t benefit from caching (i.e. assumes the optimiser will handle
 everything).</p>
 
-<h1 id="example" class='section-header'><a
-                           href="#example">Example</a></h1>
+<h2 id="example" class='section-header'><a
+                           href="#example">Example</a></h2>
 <p>(of either <code>assoc</code> or <code>typeparam</code>, in the method form they
 would use in a final API, which this crate doesn&#39;t implement)</p>
 <pre id='rust-example-rendered' class='rust '>
@@ -68,8 +142,8 @@ would use in a final API, which this crate doesn&#39;t implement)</p>
 <span class='kw'>let</span> <span class='ident'>type_hint</span> <span class='op'>=</span> <span class='ident'>rng</span>.<span class='ident'>gen</span>::<span class='op'>&lt;</span><span class='ident'>i64</span>, _<span class='op'>&gt;</span>(..);
 </pre>
 
-<h1 id="benchmarks" class='section-header'><a
-                           href="#benchmarks">Benchmarks</a></h1>
+<h2 id="benchmarks" class='section-header'><a
+                           href="#benchmarks">Benchmarks</a></h2>
 <pre><code class="language-text">test gen_assoc                      ... bench:       676 ns/iter (+/- 29)
 test gen_original                   ... bench:       684 ns/iter (+/- 14)
 test gen_typeparam                  ... bench:       681 ns/iter (+/- 13)
@@ -93,8 +167,8 @@ test range_iter_typeparam           ... bench:       986 ns/iter (+/- 65)
 
 <p>All benchmarks used <code>u32</code>.</p>
 
-<h2 id="legend" class='section-header'><a
-                           href="#legend">Legend</a></h2>
+<h3 id="legend" class='section-header'><a
+                           href="#legend">Legend</a></h3>
 <ul>
 <li><code>original</code> calls the relevant function from <code>std::rand</code> (aka crates.io&#39;s <code>rand</code>)</li>
 <li><code>gen</code> calls <code>black_box(gen())</code> 100 times</li>
@@ -105,8 +179,8 @@ test range_iter_typeparam           ... bench:       986 ns/iter (+/- 65)
 the inliner/optimiser see everything)</li>
 </ul>
 
-<h2 id="summary" class='section-header'><a
-                           href="#summary">Summary</a></h2>
+<h3 id="summary" class='section-header'><a
+                           href="#summary">Summary</a></h3>
 <p>The associated type version is essentially always more performant than
 the type parameter version. Especially for ranged <code>gen_iter</code>, where
 caching the internal computations required for <code>u32</code> makes a noticable
@@ -118,6 +192,12 @@ in <code>typeparam</code> out of the loop.</p>
                     <tr>
                         <td><a class='stability Unmarked' title='No stability level'></a><a class='mod' href='assoc/index.html'
                                title='rand-sketch::assoc'>assoc</a></td>
+                        <td class='docblock short'></td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='mod' href='stream/index.html'
+                               title='rand-sketch::stream'>stream</a></td>
                         <td class='docblock short'></td>
                     </tr>
                 

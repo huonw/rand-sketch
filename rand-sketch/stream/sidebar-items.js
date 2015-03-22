@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["GenIter",""],["IntegerStreamBounded",""],["IntegerStreamFull",""]],"trait":[["Rand",""],["RandStream",""]],"fn":[["gen","Create a single random value, mediated by `constraint`."],["gen_iter","Create an infinite sequence of random values, mediated by `constraint`."]]});

@@ -26,7 +26,7 @@
 
     <section class="sidebar">
         
-        <p class='location'><a href='../index.html'>rand-sketch</a>::<wbr><a href='index.html'>typeparam</a></p><script>window.sidebarCurrent = {name: 'GenIter', ty: 'struct', relpath: ''};</script><script async src="sidebar-items.js"></script>
+        <p class='location'><a href='../index.html'>rand-sketch</a>::<wbr><a href='index.html'>typeparam</a></p><script>window.sidebarCurrent = {name: 'GenIter', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
     </section>
 
     <nav class="sub">
@@ -43,10 +43,10 @@
     <section id='main' class="content struct">
 <h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>rand-sketch</a>::<wbr><a href='index.html'>typeparam</a>::<wbr><a class='struct' href=''>GenIter</a><wbr></span><span class='out-of-band'><span id='render-detail'>
             <a id="collapse-all" href="#">[-]</a>&nbsp;<a id="expand-all" href="#">[+]</a>
-        </span><a id='src-736' href='../../src/rand-sketch/rand-sketch.rs.html#312-316'>[src]</a></span></h1>
-<pre class='rust struct'>pub struct GenIter&lt;Rand: <a class='trait' href='../../rand-sketch/typeparam/trait.Random.html' title='rand-sketch::typeparam::Random'>Random</a>&lt;Constraint&gt;, Constraint, R: <a class='trait' href='http://doc.rust-lang.org/nightly/rand/trait.Rng.html' title='rand::Rng'>Rng</a>&gt; {
+        </span><a id='src-1212' href='../../src/rand-sketch/typeparam.rs.html#25-29'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct GenIter&lt;Rand: <a class='trait' href='../../rand-sketch/typeparam/trait.Random.html' title='rand-sketch::typeparam::Random'>Random</a>&lt;Constraint&gt;, Constraint, R: <a class='trait' href='../../rand/trait.Rng.html' title='rand::Rng'>Rng</a>&gt; {
     // some fields omitted
-}</pre><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><a class='stability Stable' title='Stable'></a><code>impl&lt;Constraint, Rand: <a class='trait' href='../../rand-sketch/typeparam/trait.Random.html' title='rand-sketch::typeparam::Random'>Random</a>&lt;Constraint&gt;, R: <a class='trait' href='http://doc.rust-lang.org/nightly/rand/trait.Rng.html' title='rand::Rng'>Rng</a>&gt; <a class='trait' href='http://doc.rust-lang.org/nightly/core/iter/trait.Iterator.html' title='core::iter::Iterator'>Iterator</a> for <a class='struct' href='../../rand-sketch/typeparam/struct.GenIter.html' title='rand-sketch::typeparam::GenIter'>GenIter</a>&lt;Rand, Constraint, R&gt;</code></h3><div class='impl-items'><h4 id='assoc_type.Item' class='type'><a class='stability Unmarked' title='No stability level'></a><code>type Item = Rand</code></h4>
+}</pre><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><a class='stability Stable' title='Stable'></a><code>impl&lt;Constraint, Rand: <a class='trait' href='../../rand-sketch/typeparam/trait.Random.html' title='rand-sketch::typeparam::Random'>Random</a>&lt;Constraint&gt;, R: <a class='trait' href='../../rand/trait.Rng.html' title='rand::Rng'>Rng</a>&gt; <a class='trait' href='http://doc.rust-lang.org/nightly/core/iter/trait.Iterator.html' title='core::iter::Iterator'>Iterator</a> for <a class='struct' href='../../rand-sketch/typeparam/struct.GenIter.html' title='rand-sketch::typeparam::GenIter'>GenIter</a>&lt;Rand, Constraint, R&gt;</code></h3><div class='impl-items'><h4 id='assoc_type.Item' class='type'><a class='stability Unmarked' title='No stability level'></a><code>type Item = Rand</code></h4>
 <h4 id='method.next' class='method'><a class='stability Stable' title='Stable'></a><code>fn <a href='#method.next' class='fnname'>next</a>(&amp;mut self) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;Rand&gt;</code></h4>
 <h4 id='method.size_hint' class='tymethod'><a class='stability Stable' title='Stable'></a><code>fn <a href='#tymethod.size_hint' class='fnname'>size_hint</a>(&amp;self) -&gt; <a href='http://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(<a href='http://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>, <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a href='http://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>&gt;)</a></code></h4>
 </div></section>

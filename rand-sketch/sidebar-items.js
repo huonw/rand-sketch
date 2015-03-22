@@ -1,1 +1,1 @@
-initSidebarItems({"mod":[["assoc",""],["typeparam",""]],"trait":[["Into",""]]});
+initSidebarItems({"mod":[["assoc",""],["stream",""],["typeparam",""]],"trait":[["Into",""]]});
