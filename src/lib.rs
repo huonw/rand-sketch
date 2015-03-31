@@ -34,6 +34,8 @@ everything).
 would use in a final API, which this crate doesn't implement)
 
 ```rust
+extern crate rand;
+
 // thread-local
 let x: u32 = rand::random(..);
 
@@ -100,6 +102,7 @@ extern crate rand;
 pub mod stream;
 pub mod assoc;
 pub mod typeparam;
+pub mod distribution;
 
 pub trait Into<Target> {
     fn into(self) -> Target;
